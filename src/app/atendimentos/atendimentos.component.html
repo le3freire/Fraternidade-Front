@@ -1,0 +1,22 @@
+<p>
+  atendimentos-fraternos works!
+</p>
+<div>
+<table class="">
+  <thead>
+      <th>N°</th>
+      <th>Nome</th>
+      <th>Telefone</th>
+      <th>Atividade</th>
+  </thead>
+  <tbody>
+      <tr *ngFor='let atend of atendimentos'>
+        <td>{{atend.id}}</td>
+        <td>{{atend.nome}}</td>
+        <td>{{atend.telefone}}</td>
+        <td>{{atend.atividade.nome}}</td>
+      </tr>
+  </tbody>
+</table>
+</div>
+

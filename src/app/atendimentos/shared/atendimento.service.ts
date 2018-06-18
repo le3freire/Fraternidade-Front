@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Observable, of } from "rxjs";
-import { AtendimentoFraterno } from "../../models/atendimento-fraterno";
+import { Atendimento } from "../../models/atendimento";
 import { ATENDIMENTOS } from "./mock-atendimentos";
 
 @Injectable({
@@ -12,7 +12,7 @@ export class AtendimentoService {
   constructor() { }
 
   //Retornar todos os atendimentos de uma determinada data
-  getAtendimentos(datAtendimento:Date): Observable<AtendimentoFraterno[]>{       
+  getAtendimentos(datAtendimento:Date): Observable<Atendimento[]>{
     return of(ATENDIMENTOS); //utilisando o mock com async
   }
 }

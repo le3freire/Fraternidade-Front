@@ -2,12 +2,14 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
-import { AtendimentosFraternosComponent } from './atendimentos-fraternos/atendimentos-fraternos.component';
+import { AtendimentosComponent } from './atendimentos/atendimentos.component';
+import { AtividadesComponent } from './atividades/atividades.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    AtendimentosFraternosComponent
+    AtendimentosComponent,
+    AtividadesComponent
   ],
   imports: [
     BrowserModule

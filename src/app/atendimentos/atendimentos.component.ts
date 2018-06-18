@@ -1,16 +1,16 @@
 import { Component, OnInit } from '@angular/core';
-import { AtendimentoFraterno } from "../models/atendimento-fraterno";
+import { Atendimento } from "../models/atendimento";
 import { AtendimentoService } from "./shared/atendimento.service";
 
 
 @Component({
-  selector: 'app-atendimentos-fraternos',
-  templateUrl: './atendimentos-fraternos.component.html',
-  styleUrls: ['./atendimentos-fraternos.component.css']
+  selector: 'app-atendimentos',
+  templateUrl: './atendimentos.component.html',
+  styleUrls: ['./atendimentos.component.css']
 })
-export class AtendimentosFraternosComponent implements OnInit {
+export class AtendimentosComponent implements OnInit {
 
-  atendimentos: AtendimentoFraterno[];
+  atendimentos: Atendimento[];
 
   constructor(private atendimentoService: AtendimentoService) { }
 

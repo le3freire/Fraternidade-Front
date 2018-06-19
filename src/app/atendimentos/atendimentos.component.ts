@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { Atendimento } from "../models/atendimento";
-import { AtendimentoService } from "./shared/atendimento.service";
+import { FormControl } from '@angular/forms';
+import { Atendimento } from '../models/atendimento';
+import { AtendimentoService } from './shared/atendimento.service';
 
 
 @Component({
@@ -14,11 +15,15 @@ export class AtendimentosComponent implements OnInit {
 
   constructor(private atendimentoService: AtendimentoService) { }
 
+  datAtendimento: FormControl;
+
   ngOnInit() {
-    this.getAtendimentos(new Date());
+    this.datAtendimento = new FormControl(new Date());
+
+    this.getAtendimentos(this.datAtendimento.value);
   }
 
-  getAtendimentos(datAtendimento:Date): void{
+  getAtendimentos(datAtendimento: Date): void {
     this.atendimentoService.getAtendimentos(datAtendimento)
         .subscribe(at => this.atendimentos = at);
   }

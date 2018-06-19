@@ -1,5 +1,5 @@
 
-import { Atividade } from "./atividade";
+import { Atividade } from './atividade';
 
 export class Atendimento {
     id: number;

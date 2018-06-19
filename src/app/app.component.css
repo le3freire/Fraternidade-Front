@@ -31,11 +31,7 @@ h1.app-name {
 }
 
 .sidenav-content {
-  height: 200px;
-  float: auto;
-  margin-left: 20px;
-  position: relative;
-  align-content: center;
+  height: auto;
 }
 
 /* 

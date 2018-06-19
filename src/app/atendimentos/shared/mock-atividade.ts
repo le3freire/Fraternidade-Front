@@ -1,4 +1,4 @@
-import { Atividade } from "../../models/atividade";
+import { Atividade } from '../../models/atividade';
 
 export const ATIVIDADE: Atividade[] = [
     {
@@ -33,4 +33,4 @@ export const ATIVIDADE: Atividade[] = [
         nome: 'Distribuiçao de sopa',
         id: 8
       }
-]
+];

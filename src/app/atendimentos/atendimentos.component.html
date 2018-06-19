@@ -1,25 +1,33 @@
-<p>
-  atendimentos-fraternos works!
-</p>
-<div>
-<table class="mat-table mat-elevation-z8">
-  <thead>
-    <tr class="mat-header-row">
+<div class="conteudo">
+  <h2>Atendimentos</h2>
+
+  <p>
+    <mat-form-field>
+      <input matInput [matDatepicker]="data" placeholder="Escolha uma data" [formControl]="datAtendimento" format="DD/MM/YYYY">
+      <mat-datepicker-toggle matSuffix [for]="data"></mat-datepicker-toggle>
+      <mat-datepicker #data></mat-datepicker>
+    </mat-form-field>
+  </p>
+
+<span *ngIf="datAtendimento.valid">{{datAtendimento.value}}</span>
+
+  <table class="mat-table mat-elevation-z8">
+    <thead>
+      <tr class="mat-header-row">
         <th class="mat-header-cell">N°</th>
         <th class="mat-header-cell">Nome</th>
         <th class="mat-header-cell">Telefone</th>
         <th class="mat-header-cell">Atividade</th>
-    </tr>
+      </tr>
 
-  </thead>
-  <tbody>
+    </thead>
+    <tbody>
       <tr class="mat-row" *ngFor='let atend of atendimentos'>
         <td class="mat-cell">{{atend.id}}</td>
         <td class="mat-cell">{{atend.nome}}</td>
         <td class="mat-cell">{{atend.telefone}}</td>
         <td class="mat-cell">{{atend.atividade.nome}}</td>
       </tr>
-  </tbody>
-</table>
+    </tbody>
+  </table>
 </div>
-

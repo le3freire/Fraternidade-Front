@@ -1,8 +1,20 @@
 <!--The content below is only a placeholder and can be replaced.-->
-<div style="text-align:center">
-  <h1>
-    Welcome to {{ title }}
-  </h1>
-  <br>
-  <app-atendimentos></app-atendimentos>
+<div class="container" >
+  <mat-toolbar color="primary" class="toolbar">
+      <button mat-icon-button (click)="snav.toggle()"><mat-icon>menu</mat-icon></button>
+      <h1 class="app-name">Welcome to {{ title }}</h1>
+    </mat-toolbar>
+  <mat-sidenav-container class="sidenav-container">
+    <mat-sidenav #snav mode="'side'" fixedTopGap="56" >
+      <mat-nav-list>
+        <a mat-list-item routerLink="/atendimentos">Atendimentos</a>
+        <a mat-list-item>Eventos</a>
+        <a mat-list-item class="badge">Identificaçao</a>
+        <a mat-list-item [class.selected]="true">Trabalho social</a>
+      </mat-nav-list>
+    </mat-sidenav>
+    <mat-sidenav-content class="sidenav-content">
+        <router-outlet></router-outlet>
+    </mat-sidenav-content>
+  </mat-sidenav-container>
   </div>

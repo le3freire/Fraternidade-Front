@@ -2,19 +2,22 @@
   atendimentos-fraternos works!
 </p>
 <div>
-<table class="">
+<table class="mat-table mat-elevation-z8">
   <thead>
-      <th>N°</th>
-      <th>Nome</th>
-      <th>Telefone</th>
-      <th>Atividade</th>
+    <tr class="mat-header-row">
+        <th class="mat-header-cell">N°</th>
+        <th class="mat-header-cell">Nome</th>
+        <th class="mat-header-cell">Telefone</th>
+        <th class="mat-header-cell">Atividade</th>
+    </tr>
+
   </thead>
   <tbody>
-      <tr *ngFor='let atend of atendimentos'>
-        <td>{{atend.id}}</td>
-        <td>{{atend.nome}}</td>
-        <td>{{atend.telefone}}</td>
-        <td>{{atend.atividade.nome}}</td>
+      <tr class="mat-row" *ngFor='let atend of atendimentos'>
+        <td class="mat-cell">{{atend.id}}</td>
+        <td class="mat-cell">{{atend.nome}}</td>
+        <td class="mat-cell">{{atend.telefone}}</td>
+        <td class="mat-cell">{{atend.atividade.nome}}</td>
       </tr>
   </tbody>
 </table>

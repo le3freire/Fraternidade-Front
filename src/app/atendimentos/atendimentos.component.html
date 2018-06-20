@@ -1,17 +1,24 @@
 <div class="conteudo">
   <h2>Atendimentos</h2>
 
-  <p>
+  <div>
     <mat-form-field>
-      <input matInput [matDatepicker]="data" placeholder="Escolha uma data" [formControl]="datAtendimento" format="DD/MM/YYYY">
-      <mat-datepicker-toggle matSuffix [for]="data"></mat-datepicker-toggle>
-      <mat-datepicker #data></mat-datepicker>
+      <div  style="width: 100%; display: block; float: left;">
+          <input matInput [matDatepicker]="data" placeholder="Escolha uma data" [(ngModel)]="datAtual" (dateInput)="obterAtendimentos($event)"
+          (dateChange)="obterAtendimentos($event)">
+        <mat-datepicker-toggle matSuffix [for]="data"></mat-datepicker-toggle>
+        <mat-datepicker #data></mat-datepicker>  
+      </div>
+      <div>
+          <button mat-button (click)='data.startView'>>></button>
+      </div>
+      
     </mat-form-field>
-  </p>
+  </div>
 
-<span *ngIf="datAtendimento.valid">{{datAtendimento.value}}</span>
-
-  <table class="mat-table mat-elevation-z8">
+  <!-- <span *ngIf="datAtendimento.valid">{{datAtendimento.value}}</span> -->
+<div>
+  <table class="mat-table mat-elevation-z8" *ngIf='(atendimentos && atendimentos.length > 0)'>
     <thead>
       <tr class="mat-header-row">
         <th class="mat-header-cell">N°</th>
@@ -30,4 +37,10 @@
       </tr>
     </tbody>
   </table>
+
+  <span *ngIf='(!atendimentos || atendimentos.length == 0)' class=''>
+    Nao foram encontrados atendimentos para a data especificada.
+  </span>
+</div>
+
 </div>

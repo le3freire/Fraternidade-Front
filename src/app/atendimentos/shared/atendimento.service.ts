@@ -12,9 +12,10 @@ export class AtendimentoService {
   constructor() { }
 
   // Retornar todos os atendimentos de uma determinada data
-  getAtendimentos(datAtendimento: Date): Observable<Atendimento[]> {
+  obterAtendimentos(datAtendimento: Date): Observable<Atendimento[]> {
     return of(ATENDIMENTOS.filter(function(at) {
       return at.dataAtendimento.toISOString() === datAtendimento.toISOString();
     })); // utilisando o mock com async
+
   }
 }
